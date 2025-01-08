@@ -1,0 +1,17 @@
+.custom-height {
+  height: 100vh;
+}
+
+.custom-color {
+  background-color: rgb(209, 209, 209);
+}
+
+.todo-title {
+  color: rgb(80, 80, 80);
+  font-size: 1.5rem;
+}
+
+.todo-title:focus {
+  border: none;
+  outline: none;
+}
