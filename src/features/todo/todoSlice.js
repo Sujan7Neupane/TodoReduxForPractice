@@ -25,6 +25,27 @@ export const todoSlice = createSlice({
           : todo
       );
     },
+    toggleTodo: (state, action) => {
+      state.todos = state.todos.map((todo) =>
+        todo.id === action.payload.id
+          ? { ...todo, completed: !todo.completed }
+          : todo
+      );
+    },
+    clearCompleted: (state) => {
+      state.todos = state.todos.filter((todo) => !todo.completed);
+    },
+    setTodos: (state, action) => {
+      // Replace all todos with a new array
+      state.todos = action.payload.todos;
+    },
+    toggleAll: (state) => {
+      const allCompleted = state.todos.every((todo) => todo.completed);
+      state.todos = state.todos.map((todo) => ({
+        ...todo,
+        completed: !allCompleted,
+      }));
+    },
   },
 });
 
